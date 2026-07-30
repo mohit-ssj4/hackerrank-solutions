@@ -1,0 +1,27 @@
+# ──────────────────────────────────────────────────
+# Link        https://www.hackerrank.com/challenges/py-check-subset/problem?isFullScreen=true
+# Problem     Check Subset
+# Difficulty  Easy
+# Subdomain   Sets
+# Platform    HackerRank
+# Language    pypy3
+# Status      Accepted
+# Submitted   2026-07-31, 12:54 a.m.
+# ──────────────────────────────────────────────────
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+if __name__ == "__main__":
+    combined_list = []
+    answer_list = []
+    for _ in range(int(input())):
+        len_of_set_a = int(input())
+        set_a = input().split(" ")
+        len_of_set_b = int(input())
+        set_b = input().split(" ")
+        combined_list = list(set(set_a + set_b))
+        if (len(combined_list) == len(set_b)):
+            answer_list.append(True)
+        else:
+            answer_list.append(False)
+    for answer in answer_list:
+        print(answer)
