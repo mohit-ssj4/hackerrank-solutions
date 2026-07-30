@@ -1,0 +1,30 @@
+# ──────────────────────────────────────────────────
+# Link        https://www.hackerrank.com/challenges/nested-list/problem?isFullScreen=true
+# Problem     Nested Lists
+# Difficulty  Easy
+# Subdomain   Basic Data Types
+# Platform    HackerRank
+# Language    pypy3
+# Status      Accepted
+# Submitted   2026-07-31, 12:53 a.m.
+# ──────────────────────────────────────────────────
+
+if __name__ == '__main__':
+    name_list = []
+    score_list = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        name_list.append(name)
+        score_list.append(score)
+    sorted_score_list = list(set(score_list))
+    sorted_score_list.sort()
+    second_lowest = sorted_score_list[1]
+    indices = [index for index, value in enumerate(score_list) if value == second_lowest]
+    
+    unsorted_name_list = []
+    for i in indices:
+        unsorted_name_list.append(name_list[i])
+    unsorted_name_list.sort()
+    for i in unsorted_name_list:
+        print(i)
