@@ -1,0 +1,25 @@
+# ──────────────────────────────────────────────────
+# Link        https://www.hackerrank.com/challenges/finding-the-percentage/problem?isFullScreen=true
+# Problem     Finding the percentage
+# Difficulty  Easy
+# Subdomain   Basic Data Types
+# Platform    HackerRank
+# Language    pypy3
+# Status      Accepted
+# Submitted   2026-07-31, 12:53 a.m.
+# ──────────────────────────────────────────────────
+
+if __name__ == '__main__':
+    n = int(input())
+    student_marks = {}
+    for _ in range(n):
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    query_name = input()
+    scores_list = list(student_marks[query_name])
+    total_sum = 0
+    for score in scores_list:
+        total_sum = total_sum + score
+    print(f"{total_sum / len(scores_list):.2f}")
+        
